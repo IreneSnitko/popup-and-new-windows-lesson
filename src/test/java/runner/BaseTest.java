@@ -28,6 +28,9 @@ public abstract class BaseTest {
     @AfterMethod
     protected void afterMethod() {
         driver.quit();
+
+        webDriverWait20 = null;
+        webDriverWait10 = null;
     }
 
     protected WebDriver getDriver() {
