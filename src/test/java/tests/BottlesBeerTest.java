@@ -11,7 +11,7 @@ import runner.BaseTest;
 public class BottlesBeerTest extends BaseTest {
 
     @Test
-    public void howWorkWithAlerts() throws InterruptedException {
+    public void workWithAlerts() {
 
         //Перейти пошагово к странице, где вызываются alerts
 
@@ -44,8 +44,7 @@ public class BottlesBeerTest extends BaseTest {
 
         //Инициализировать переменную String для последующего Assert, значение: текст в alert
         //Переменная инициализирована для примера работы метода getText(), далее не используется
-
-        String actualTextFromPromptURL = alertUrl.getText();
+        // String actualTextFromPromptURL = alertUrl.getText();
 
         //Напечатать в alert field текст
 
@@ -56,6 +55,8 @@ public class BottlesBeerTest extends BaseTest {
 
         alertUrl.accept();
         alertUrl.accept();
+
+        Assert.assertFalse(bp.isAlertPresent());
     }
 
     @Test
