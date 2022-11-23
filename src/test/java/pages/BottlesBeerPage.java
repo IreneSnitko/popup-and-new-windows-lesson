@@ -1,8 +1,11 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BottlesBeerPage extends BasePage{
 
@@ -41,5 +44,14 @@ public class BottlesBeerPage extends BasePage{
 
     public  void clickIconPromptURL() {
         getIconPromptURL().click();
+    }
+
+    public boolean isAlertPresent() {
+        try{
+            getDriver().switchTo().alert();
+            return true;
+        }catch (NoAlertPresentException e){
+            return false;
+        }
     }
 }
